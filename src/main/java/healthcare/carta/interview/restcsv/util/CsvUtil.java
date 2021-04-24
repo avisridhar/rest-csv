@@ -32,8 +32,8 @@ public class CsvUtil {
             e.printStackTrace();
         } finally {
             try {
-                fileReader.close();
-                csvParser.close();
+                if (fileReader != null) fileReader.close();
+                if (csvParser != null) csvParser.close();
             } catch (IOException e) {
                 System.out.println("Closing fileReader/csvParser Error!");
                 e.printStackTrace();
